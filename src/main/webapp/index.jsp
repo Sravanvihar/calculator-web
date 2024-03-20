@@ -120,18 +120,18 @@
         <br>
         <div class="radio-group">
             <div class="radio-item">
-                <input type="radio" id="add" name="operation" value="add" checked>
-                <label for="add">Addition</label>
+                <input type="radio" id="addition" name="operation" value="add" checked>
+                <label for="addition">Addition</label>
                 <span></span>
             </div>
             <div class="radio-item">
-                <input type="radio" id="sub" name="operation" value="sub">
-                <label for="sub">Subtraction</label>
+                <input type="radio" id="subtraction" name="operation" value="sub">
+                <label for="subtraction">Subtraction</label>
                 <span></span>
             </div>
             <div class="radio-item">
-                <input type="radio" id="prod" name="operation" value="prod">
-                <label for="prod">Product</label>
+                <input type="radio" id="product" name="operation" value="prod">
+                <label for="product">Product</label>
                 <span></span>
             </div>
         </div>
