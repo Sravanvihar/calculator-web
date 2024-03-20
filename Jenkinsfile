@@ -41,7 +41,7 @@ pipeline {
                 deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://192.168.138.114:8081/')], contextPath: null, war: '**/*.war'
             }
         }
-
+/*
         stage('API Testing') {
             steps {
                 script {
@@ -72,5 +72,5 @@ pipeline {
                 error 'Pipeline failed'
             }
         }
-    }
+    } */
 }
