@@ -17,15 +17,18 @@
     }
 
     .calculator {
-        background-color: #fff;
+        background-image: url('calculator_image.jpg'); /* Replace 'calculator_image.jpg' with the path to your calculator image */
+        background-size: cover;
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        text-align: center;
     }
 
     h1 {
-        text-align: center;
         margin-bottom: 20px;
+        color: white; /* Adjust the text color as needed */
     }
 
     form {
@@ -35,6 +38,7 @@
     label {
         display: block;
         margin-bottom: 10px;
+        color: white; /* Adjust the text color as needed */
     }
 
     input[type="text"],
