@@ -7,7 +7,7 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: #f0f0f0;
         margin: 0;
         padding: 0;
         display: flex;
@@ -19,14 +19,12 @@
     .calculator {
         background-color: #fff;
         border-radius: 10px;
-        padding: 30px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        width: 350px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
         text-align: center;
-        color: #333;
         margin-bottom: 20px;
     }
 
@@ -37,120 +35,56 @@
     label {
         display: block;
         margin-bottom: 10px;
-        color: #666;
     }
 
     input[type="text"],
     input[type="radio"] {
-        padding: 12px;
+        padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        margin-bottom: 20px;
-        width: calc(100% - 24px);
-        box-sizing: border-box;
+        margin-bottom: 10px;
     }
 
     input[type="submit"] {
-        padding: 12px 20px;
-        background-color: #4caf50;
+        padding: 10px 20px;
+        background-color: #007bff;
         color: #fff;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        transition: background-color 0.3s;
     }
 
     input[type="submit"]:hover {
-        background-color: #45a049;
-    }
-
-    .result {
-        margin-top: 20px;
-        font-size: 18px;
-    }
-
-    /* Radio Button Style */
-    .radio-group {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .radio-item {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .radio-item input[type="radio"] {
-        display: none;
-    }
-
-    .radio-item label {
-        margin-left: 5px;
-        cursor: pointer;
-    }
-
-    .radio-item span {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #4caf50;
-        border-radius: 50%;
-        position: relative;
-    }
-
-    .radio-item input[type="radio"]:checked + span::after {
-        content: '';
-        width: 10px;
-        height: 10px;
-        background-color: #4caf50;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: block;
+        background-color: #0056b3;
     }
 </style>
 </head>
 <body>
 <div class="calculator">
     <h1>Calculator</h1>
-    <form action="Calculator" method="post">
-        <label for="n1">First number:</label>
-        <input type="text" name="n1" id="n1" required>
+    <form action="firstHomePage" method="get">
+        <label>First number:</label>
+        <input type="text" name="n1" required>
         <br>
-        <label for="n2">Second number:</label>
-        <input type="text" name="n2" id="n2" required>
+        <label>Second number:</label>
+        <input type="text" name="n2" required>
         <br>
-        <div class="radio-group">
-            <div class="radio-item">
-                <input type="radio" id="addition" name="operation" value="add" checked>
-                <label for="addition">Addition</label>
-                <span></span>
-            </div>
-            <div class="radio-item">
-                <input type="radio" id="subtraction" name="operation" value="sub">
-                <label for="subtraction">Subtraction</label>
-                <span></span>
-            </div>
-            <div class="radio-item">
-                <input type="radio" id="product" name="operation" value="mul">
-                <label for="product">Multiplication</label>
-                <span></span>
-            </div>
+        <div>
+            <label>
+                <input type="radio" name="r1" value="add"> Addition
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="r2" value="sub"> Subtraction
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="r3" value="prod"> Product
+            </label>
+            <br>
         </div>
-        <br>
         <input type="submit" value="Calculate">
     </form>
-    <div class="result">
-        <% 
-            String result = (String)request.getAttribute("result");
-            if(result != null) {
-                out.println(result);
-            }
-        %>
-    </div>
 </div>
 </body>
 </html>
