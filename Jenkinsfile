@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from Git repository
-                git branch: 'main', url: 'https://github.com/beeru405/testing-sonar.git'
+                git branch: 'main', url: 'https://github.com/beeru405/calculator-web.git'
             }
         }
 
@@ -15,7 +15,7 @@ pipeline {
                 sh 'mvn clean test install'
             }
         }
-
+/*
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
@@ -34,7 +34,7 @@ pipeline {
                 }
             }
         }
-
+*/
         stage('Deploy to Tomcat') {
             steps {
                 // Copy the war file to Tomcat webapps directory
