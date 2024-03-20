@@ -17,29 +17,27 @@
     }
 
     .calculator {
-        background-image: url('calculator_image.jpg'); /* Replace 'calculator_image.jpg' with the path to your calculator image */
-        background-size: cover;
+        background-color: #fff;
         border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 350px;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        width: 400px;
         text-align: center;
     }
 
     h1 {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        color: #333; /* Text color changed */
+        margin-top: 0;
+        color: #333;
     }
 
     form {
-        text-align: center;
+        text-align: left;
     }
 
     label {
         display: block;
         margin-bottom: 10px;
-        color: #333; /* Text color changed */
+        color: #333;
     }
 
     input[type="text"],
@@ -47,7 +45,8 @@
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        width: calc(100% - 22px);
     }
 
     input[type="submit"] {
@@ -57,44 +56,37 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        transition: background-color 0.3s;
     }
 
     input[type="submit"]:hover {
         background-color: #0056b3;
     }
 
-    .welcome-text {
-        text-align: center;
-        font-size: 24px;
+    .operation-group {
         margin-bottom: 20px;
-        color: #333; /* Text color changed */
+    }
+
+    .operation-group label {
+        margin-right: 15px;
     }
 </style>
 </head>
 <body>
-<h1 class="welcome-text">Welcome to IDRBT</h1>
 <div class="calculator">
-    <h1>Calculator</h1>
-    <form action="firstHomePage" method="get">
-        <label>First number:</label>
-        <input type="text" name="n1" required>
+    <h1>Welcome to IDRBT</h1>
+    <h2>Calculator</h2>
+    <form action="Calculator" method="post">
+        <label for="n1">First number:</label>
+        <input type="text" name="n1" id="n1" required>
         <br>
-        <label>Second number:</label>
-        <input type="text" name="n2" required>
+        <label for="n2">Second number:</label>
+        <input type="text" name="n2" id="n2" required>
         <br>
-        <div>
-            <label>
-                <input type="radio" name="r1" value="add"> Addition
-            </label>
-            <br>
-            <label>
-                <input type="radio" name="r2" value="sub"> Subtraction
-            </label>
-            <br>
-            <label>
-                <input type="radio" name="r3" value="prod"> Product
-            </label>
-            <br>
+        <div class="operation-group">
+            <label><input type="radio" name="operation" value="add" checked> Addition</label>
+            <label><input type="radio" name="operation" value="sub"> Subtraction</label>
+            <label><input type="radio" name="operation" value="mul"> Multiplication</label>
         </div>
         <input type="submit" value="Calculate">
     </form>
