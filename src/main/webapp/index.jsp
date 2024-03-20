@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculator</title>
+<title>Welcome to IDRBT</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -27,8 +27,9 @@
     }
 
     h1 {
+        margin-top: 20px;
         margin-bottom: 20px;
-        color: white; /* Adjust the text color as needed */
+        color: #333; /* Text color changed */
     }
 
     form {
@@ -38,7 +39,7 @@
     label {
         display: block;
         margin-bottom: 10px;
-        color: white; /* Adjust the text color as needed */
+        color: #333; /* Text color changed */
     }
 
     input[type="text"],
@@ -61,9 +62,17 @@
     input[type="submit"]:hover {
         background-color: #0056b3;
     }
+
+    .welcome-text {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333; /* Text color changed */
+    }
 </style>
 </head>
 <body>
+<h1 class="welcome-text">Welcome to IDRBT</h1>
 <div class="calculator">
     <h1>Calculator</h1>
     <form action="firstHomePage" method="get">
