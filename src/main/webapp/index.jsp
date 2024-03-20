@@ -6,8 +6,8 @@
 <title>Calculator</title>
 <style>
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
         margin: 0;
         padding: 0;
         display: flex;
@@ -19,9 +19,9 @@
     .calculator {
         background-color: #fff;
         border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 30px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        width: 350px;
+        width: 300px;
     }
 
     h1 {
@@ -37,22 +37,22 @@
     label {
         display: block;
         margin-bottom: 10px;
-        color: #666;
+        color: #555;
     }
 
     input[type="text"],
     input[type="radio"] {
-        padding: 12px;
+        padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        margin-bottom: 20px;
-        width: calc(100% - 24px);
+        margin-bottom: 15px;
+        width: calc(100% - 22px);
         box-sizing: border-box;
     }
 
     input[type="submit"] {
-        padding: 12px 20px;
-        background-color: #4caf50;
+        padding: 10px 20px;
+        background-color: #007bff;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -61,19 +61,17 @@
     }
 
     input[type="submit"]:hover {
-        background-color: #45a049;
+        background-color: #0056b3;
     }
 
     /* Radio Button Style */
     .radio-group {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .radio-item {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
+        margin-right: 20px;
     }
 
     .radio-item input[type="radio"] {
@@ -81,30 +79,13 @@
     }
 
     .radio-item label {
-        margin-left: 5px;
         cursor: pointer;
+        color: #333;
+        font-weight: bold;
     }
 
-    .radio-item span {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #4caf50;
-        border-radius: 50%;
-        position: relative;
-    }
-
-    .radio-item input[type="radio"]:checked + span::after {
-        content: '';
-        width: 10px;
-        height: 10px;
-        background-color: #4caf50;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: block;
+    .radio-item input[type="radio"]:checked + label {
+        color: #007bff;
     }
 </style>
 </head>
@@ -120,19 +101,16 @@
         <br>
         <div class="radio-group">
             <div class="radio-item">
-                <input type="radio" id="addition" name="operation" value="add" checked>
-                <label for="addition">Addition</label>
-                <span></span>
+                <input type="radio" id="add" name="operation" value="add" checked>
+                <label for="add">Addition</label>
             </div>
             <div class="radio-item">
-                <input type="radio" id="subtraction" name="operation" value="sub">
-                <label for="subtraction">Subtraction</label>
-                <span></span>
+                <input type="radio" id="sub" name="operation" value="sub">
+                <label for="sub">Subtraction</label>
             </div>
             <div class="radio-item">
-                <input type="radio" id="product" name="operation" value="prod">
-                <label for="product">Product</label>
-                <span></span>
+                <input type="radio" id="mul" name="operation" value="mul">
+                <label for="mul">Multiplication</label>
             </div>
         </div>
         <br>
