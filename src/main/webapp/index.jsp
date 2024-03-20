@@ -7,7 +7,7 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f7f7f7;
+        background-color: #f4f4f4;
         margin: 0;
         padding: 0;
         display: flex;
@@ -19,9 +19,9 @@
     .calculator {
         background-color: #fff;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 30px;
-        width: 300px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        width: 350px;
     }
 
     h1 {
@@ -37,22 +37,22 @@
     label {
         display: block;
         margin-bottom: 10px;
-        color: #555;
+        color: #666;
     }
 
     input[type="text"],
     input[type="radio"] {
-        padding: 10px;
+        padding: 12px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        margin-bottom: 15px;
-        width: calc(100% - 22px);
+        margin-bottom: 20px;
+        width: calc(100% - 24px);
         box-sizing: border-box;
     }
 
     input[type="submit"] {
-        padding: 10px 20px;
-        background-color: #007bff;
+        padding: 12px 20px;
+        background-color: #4caf50;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -61,17 +61,24 @@
     }
 
     input[type="submit"]:hover {
-        background-color: #0056b3;
+        background-color: #45a049;
+    }
+
+    .result {
+        margin-top: 20px;
+        font-size: 18px;
     }
 
     /* Radio Button Style */
     .radio-group {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
     }
 
     .radio-item {
-        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
     }
 
     .radio-item input[type="radio"] {
@@ -79,20 +86,37 @@
     }
 
     .radio-item label {
+        margin-left: 5px;
         cursor: pointer;
-        color: #333;
-        font-weight: bold;
     }
 
-    .radio-item input[type="radio"]:checked + label {
-        color: #007bff;
+    .radio-item span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #4caf50;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .radio-item input[type="radio"]:checked + span::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: #4caf50;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
     }
 </style>
 </head>
 <body>
 <div class="calculator">
     <h1>Calculator</h1>
-    <form action="firstHomePage" method="get">
+    <form action="Calculator" method="post">
         <label for="n1">First number:</label>
         <input type="text" name="n1" id="n1" required>
         <br>
@@ -101,21 +125,32 @@
         <br>
         <div class="radio-group">
             <div class="radio-item">
-                <input type="radio" id="add" name="operation" value="add" checked>
-                <label for="add">Addition</label>
+                <input type="radio" id="addition" name="operation" value="add" checked>
+                <label for="addition">Addition</label>
+                <span></span>
             </div>
             <div class="radio-item">
-                <input type="radio" id="sub" name="operation" value="sub">
-                <label for="sub">Subtraction</label>
+                <input type="radio" id="subtraction" name="operation" value="sub">
+                <label for="subtraction">Subtraction</label>
+                <span></span>
             </div>
             <div class="radio-item">
-                <input type="radio" id="mul" name="operation" value="mul">
-                <label for="mul">Multiplication</label>
+                <input type="radio" id="product" name="operation" value="mul">
+                <label for="product">Multiplication</label>
+                <span></span>
             </div>
         </div>
         <br>
         <input type="submit" value="Calculate">
     </form>
+    <div class="result">
+        <% 
+            String result = (String)request.getAttribute("result");
+            if(result != null) {
+                out.println(result);
+            }
+        %>
+    </div>
 </div>
 </body>
 </html>
